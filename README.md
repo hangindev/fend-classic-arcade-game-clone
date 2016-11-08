@@ -1,5 +1,9 @@
 # Frogger Game
 
-## Instruction
-* Move the player by arrow keys.
-* Your **goal** is to reach the water without colliding with any bugs.
+## Instructions
+* Move your character by arrow keys.
+* Your _goal_ is to reach the water without colliding with any bugs.
+
+## Features
+* Score counter
+* Randomly assigned character
