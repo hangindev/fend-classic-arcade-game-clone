@@ -30,18 +30,29 @@ Enemy.prototype.render = function() {
 };
 
 // Initiate player location
-var Player = function() {
+var Player = function(char) {
+    /**
+    switch(char) {
+      case "boy":
+          this.sprite = 'images/char-boy.png';
+          break;
+      case "girl":
+          this.sprite = 'images/char-cat-girl.png';
+          break;
+      default:
+          break;
+    }
+    */
     this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 300;
+    this.score = 0;
 };
 
 // Reset player's location if player reaches the water
 Player.prototype.update = function() {
-    if(this.y === -20) {
-    this.x = 200;
-    this.y = 300;
-  }
+  this.x=this.x;
+  this.y=this.y;
 };
 
 // Draw player on the screen
@@ -78,7 +89,21 @@ var enemy3 = new Enemy();
 var enemy4 = new Enemy();
 var allEnemies = [enemy1, enemy2, enemy3, enemy4];
 
-var player = new Player();
+var player;
+
+//var makePlayer = function(char) {
+//  player = new Player(char);
+//}
+var makePlayer = function() {
+  player = new Player();
+}
+
+var score = 0;
+
+var drawScore = function() {
+  ctx.fillText(score, 450, 110);
+  ctx.strokeText(score, 450, 110);
+}
 
 // Check collision between player and enemies
 var checkCollisions = function(allEnemies, player) {
@@ -90,6 +115,11 @@ var checkCollisions = function(allEnemies, player) {
         }
       }
   });
+  if(player.y === -20) {
+    player.x = 200;
+    player.y = 300;
+    score++;
+  }
 }
 
 // This listens for key presses and sends the keys to your
@@ -101,6 +131,5 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
