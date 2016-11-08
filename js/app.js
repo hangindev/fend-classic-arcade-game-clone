@@ -31,19 +31,22 @@ Enemy.prototype.render = function() {
 
 // Initiate player location
 var Player = function(char) {
-    /**
     switch(char) {
-      case "boy":
+      case 1:
           this.sprite = 'images/char-boy.png';
           break;
-      case "girl":
+      case 2:
           this.sprite = 'images/char-cat-girl.png';
+          break;
+      case 3:
+          this.sprite = 'images/char-pink-girl.png';
+          break;
+      case 4:
+          this.sprite = 'images/char-princess-girl.png';
           break;
       default:
           break;
     }
-    */
-    this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 300;
     this.score = 0;
@@ -91,11 +94,8 @@ var allEnemies = [enemy1, enemy2, enemy3, enemy4];
 
 var player;
 
-//var makePlayer = function(char) {
-//  player = new Player(char);
-//}
-var makePlayer = function() {
-  player = new Player();
+var makePlayer = function(char) {
+  player = new Player(char);
 }
 
 var score = 0;

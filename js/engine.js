@@ -71,8 +71,7 @@ var Engine = (function(global) {
     function init() {
         reset();
         lastTime = Date.now();
-        makePlayer();
-        //makePlayer("boy");
+        makePlayer(Math.floor(Math.random() * 4) + 1);
         main();
     }
 
@@ -181,7 +180,9 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-        'images/char-cat-girl.png'
+        'images/char-cat-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
