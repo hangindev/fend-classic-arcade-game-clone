@@ -1,8 +1,9 @@
 # Frogger Game
+Your _goal_ is to reach the water without colliding with any bugs.
 
-## Instructions
+## Run Instructions
+* Open index.html and play.
 * Move your character by arrow keys.
-* Your _goal_ is to reach the water without colliding with any bugs.
 
 ## Features
 * Score counter
