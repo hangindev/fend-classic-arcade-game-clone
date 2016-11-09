@@ -1,3 +1,5 @@
+"use strict";
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -52,11 +54,8 @@ var Player = function(char) {
     this.score = 0;
 };
 
-// Reset player's location if player reaches the water
-Player.prototype.update = function() {
-  this.x=this.x;
-  this.y=this.y;
-};
+//Player.prototype.update = function() {
+//};
 
 // Draw player on the screen
 Player.prototype.render = function() {
@@ -100,6 +99,7 @@ var makePlayer = function(char) {
 
 var score = 0;
 
+// Show the score
 var drawScore = function() {
   ctx.fillText(score, 450, 110);
   ctx.strokeText(score, 450, 110);
